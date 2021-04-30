@@ -1,0 +1,51 @@
+- let titulo = "Pagina WEB prepos pug ";
+- let nombre = "Jhon Davi";
+- let hobbies = ["Programar","Cocino","Caminar"];
+doctype html
+html(lang="sp")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{titulo.toUpperCase()}
+        script
+            include script/main.js
+    body
+         //- h1 #{nombre.toUpperCase()}
+         //- p #{hobbies[2]}
+         -let edad = 19;
+         //- p= edad==18 ? 'Es mayor de edad' : 'Condicion no se cumple'
+         //- #edad
+         //- if edad==18
+         //-     p Es mayor de edad 
+         //- else if edad<=17 && edad>=15
+         //-     p Esta entre los 17 y 15
+         //- else
+         //-     p Condicion no se cumple
+         //- case edad
+         //-     when 19: p tiene 19 años #{nombre}
+         //-     when 18: p Es mayor de edad
+         //-     default: p Condicion no se cumple
+         - let lista = ["Jhon"];
+         - let i=0;
+         //- - for (let indice of lista)
+         //-     p= indice
+         //- each valor, indice in lista
+         //-     p=lista[indice]
+         //- each valor in lista.length ? lista : ["No hay datos"]
+         //-     p= valor
+         //- while i < lista.length
+         //-     p=lista[i++]
+         //- Simular una funcion en javascript
+         //- -let valor="";
+         //- mixin saludar(nombre)
+         //-     -valor = `Hola ${nombre} como estas`;
+         //- +saludar("Miguel")
+         //- +saludar("Marly")
+         //- p #{valor}
+         mixin crearimagenes(img="#", nombre="No se envion la imagen por mixin")
+             img.cajas(src=img, title=nombre, alt=nombre  width="250")
+        
+         +crearimagenes("https://miro.medium.com/max/547/1*XUK4XE1-j9ju7qWVzcIsYg.png", "PUG")
+         +crearimagenes("https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png", "HTML5")
+         +crearimagenes
